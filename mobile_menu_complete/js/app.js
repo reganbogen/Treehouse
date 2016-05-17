@@ -12,7 +12,7 @@ $("#menu a").each(function(){
   var $option = $("<option></option>");
 
   //Deal with selected options depending on current page
-  if($anchor.parent()/hasClass("selected")) {
+  if($anchor.parent().hasClass("selected")) {
     $option.prop("selected", true); 
   }
 
@@ -32,6 +32,3 @@ $button.click(function(){
    //Go to select's location 
   window.location = $select.val(); 
 })
-
-/
-/
