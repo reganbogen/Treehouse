@@ -41,11 +41,19 @@ ul li.selected a {
 }
 
 select {
-	width: 94%;
+	width: 84%;
 	margin: 11px  0 11px 2%;
 	float: left;
 }
 
+button {
+	display: inline-block;
+	line-height: 18px;
+	padding: 0 5px;
+	margin: 11px 2% 11px 0;
+	float: right;
+	width: 10%;
+}
 h1 {
 	margin: 40px 0 10px;
 	text-align: center;
@@ -55,36 +63,52 @@ p {
 	text-align: center;
 	color: #777;
 }
-/** Start Coding Here **/
-
 /** 
 Modify CSS to hide links on small width and show button and select
 Also hides select and button on larger width and show's links
-**/
+ **/
 
-@media (min-width: 320px) and (max-width: 568px) {
-  #menu ul {
-    display:none;
-  }
+@media (min-width: 320px) and (max-width: 568px){
+	#menu ul {
+		display:none;
+	}
 }
 
-@media (min-width: 568px) {
-  #menu select, #menu button {
-    display:none;
-  }
+@media (min-width: 568px){
+	#menu select, #menu button {
+		display:none;
+	}
 }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
