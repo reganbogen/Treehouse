@@ -15,3 +15,14 @@ $('.header').on('sticky-start', function () {
 $('.header').on('sticky-end', function () {
   $('.description').html('We build apps');
 });
+
+$('.work').sticky({
+	topSpacing; 60; getWidthFrom: ".container", responsiveWidth: true
+});
+$('.work').on('sticky-start', function(){
+	$(this).append(' <a href="mailto:email@website.com" class="email-text">Email&nbsp;us</a>);
+});
+
+$('.work').on('sticky-end', function(){
+	$('.email-text').remove();
+});
