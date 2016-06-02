@@ -1,8 +1,12 @@
-var Portland = {
-bridges: 12,
-airport: 1, 
-soccerTeams: 1,
-logNumberOfBridges: function() {
-   console.log(“there are “ + this.bridges + “ bridges in Portland!”)
-  }
-}
+var City = function (name, state) {
+	this.name = name || ‘Portland’;
+	this.state = state || ‘Oregon’;
+	this.pringMyCityAndState = function() {
+	  console.log(“My city is ” + this.name + ”, and my state is ” + this.state);
+};
+portland = new City();
+seattle = new City(‘Seattle', ‘Washington');
+salem = new City(‘Salem’);
+
+portland.printMyCityAndState();
+seattle.printMyCityAndState();
