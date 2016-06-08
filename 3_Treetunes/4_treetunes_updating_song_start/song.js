@@ -1,17 +1,9 @@
-function Song(title, artist, duration) {
-  this.title = title;
+function Song(title, artist, duration){
+  Media.call (this, title, duration);
   this.artist = artist;
-  this.duration = duration;
-  this.isPlaying = false;
 }
 
-Song.prototype.play = function() {
-  this.isPlaying = true;
-};
-
-Song.prototype.stop = function() {
-  this.isPlaying = false;
-};
+song.prototype = Object.create(Media.prototype);
 
 Song.prototype.toHTML = function() {
   var htmlString = '<li';
@@ -27,8 +19,6 @@ Song.prototype.toHTML = function() {
   htmlString += '</span></li>';
   return htmlString;
 };
-
-
 
 
 
