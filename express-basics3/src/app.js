@@ -1,15 +1,15 @@
 'use strict';
 
 var express = require('express'),
- 	posts 	= require('./mock/posts.json');
+	  posts = require('./mock/posts.json');
 
 var app = express();
 
 app.get('/', function(req, res){
-	res.send("<h1>I Am In Love With Treehouse!</h1>");
+	res.send("<h1>I Love Treehouse!</h1>");
 });
 
-app.get('/blog', function(req, res){
+app.get('/blog', function(req, res){ 
 	res.send(posts);
 });
 
