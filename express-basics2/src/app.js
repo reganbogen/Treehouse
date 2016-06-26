@@ -1,6 +1,7 @@
 'use strict';
 
-var express = require('express');
+var express = require('express'),
+posts = require('./mock/posts.json');
 
 var app = express();
 
