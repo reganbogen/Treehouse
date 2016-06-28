@@ -5,16 +5,18 @@ var express = require('express'),
 
 var app = express();
 
-debugger;
-
 app.get('/', function(req, res){
 	res.send("<h1>I am loving Treehouse!</h1>");
 });
 
 app.get('/blog:title', function(req, res){ 
 	var title = req.params.title;
+	if (title === undefined) {
+		res.send("This page is under construction!")
+	} else {
 	var post = posts[title];
-	res.send(posts);
+	res.send(posts);	
+	}	
 });
 
 app.listen(3000, function(){
