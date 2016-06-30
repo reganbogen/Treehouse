@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hdngr/treehouse-express-basics",
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "express": "^4.13.0",
     "jade": "^1.11.0"
   }
