@@ -9,4 +9,3 @@ gulp.task('hello', function() {
 gulp.task("default", ["hello"], function() {
 	console.log("This is the default task!")
 });
-
