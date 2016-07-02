@@ -36,8 +36,9 @@ gulp.task('compileSass', function() {
 });
 
 gulp.task('watchFiles', function() {
-  gulp.watch('scss/**/*.scss', 'js/main.js'],['compileSass', 'concatScripts']);
- })
+  gulp.watch('scss/**/*.scss', ['compileSass']);
+  gulp.watch('js/main.js', ['concatScripts']);
+})
 
 gulp.task('clean', function() {
   del(['dist', 'css/application.css*', 'js/app*.js*']);
@@ -49,4 +50,8 @@ gulp.task("build", ['minifyScripts', 'compileSass'], function() {
             .pipe(gulp.dest('dist'));
 });
 
-gulp.task("default", ["build"]);
+gulp.task('serve', ['watchFiles']);
+
+gulp.task("default", ["clean"], function() {
+	gulp.start('build');
+});
