@@ -35,9 +35,13 @@ gulp.task('compileSass', function() {
 });
 
 gulp.task('watchSass', function() {
-	gulp.watch(['scss/**/*.scss'], ['compileSass'])
-});
+  gulp.watch('scss/**/*.scss', ['compileSass']);
+})
 
-gulp.task("build", ['minifyScripts', 'compileSass']);
+gulp.task("build", ['minifyScripts', 'compileSass'], function(){
+	return gulp.src(['css/application.css', 'js/app.min.js', 'index.html', 
+					'img/**', 'fonts/**'], { base: './' })
+			.pipe(gulp.dest('dist'));
+});
 
 gulp.task("default", ["build"]);
