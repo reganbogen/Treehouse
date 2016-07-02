@@ -1,11 +1,18 @@
-'use strict';
+"use strict";
 
 var gulp = require('gulp');
+var concat = require('gulp-concat');
 
-gulp.task('hello', function() {
-	console.log("hello!");
-})
+gulp.task("concatScripts", function() {
+    gulp.src([
+    	'js/jquery.js',
+    	'js/sticky/jquery.sticky.js',
+    	'js/main.js'])
+    .pipe(concat("app.js"))
+    .pipe(gulp.dest("js"));
+
+});
 
 gulp.task("default", ["hello"], function() {
-	console.log("This is the default task!")
+    console.log("the default task!!!!");
 });
