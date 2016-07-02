@@ -5,8 +5,8 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   rename = require('gulp-rename'),
     sass = require('gulp-sass'),
-    maps = require('gulp-sourcemaps'), 
-    del = require('del');
+    maps = require('gulp-sourcemaps'),
+     del = require('del');
 
 gulp.task("concatScripts", function() {
     return gulp.src([
@@ -35,20 +35,19 @@ gulp.task('compileSass', function() {
       .pipe(gulp.dest('css'));
 });
 
-gulp.task('watchSass', function() {
+gulp.task('watchFiles', function() {
   gulp.watch('scss/**/*.scss', ['compileSass']);
-});
+  gulp.watch('js/main.js', ['concatScripts']); 
+})
 
 gulp.task('clean', function() {
-	del(['dist', 'css/application.css*', 'js/app*.js*']);
+  del(['dist', 'css/application.css*', 'js/app*.js*']);
 });
 
-gulp.task("build", ['minifyScripts', 'compileSass'], function(){
-	return gulp.src(['css/application.css', 'js/app.min.js', 'index.html', 
-					'img/**', 'fonts/**'], { base: './' })
-			.pipe(gulp.dest('dist'));
+gulp.task("build", ['minifyScripts', 'compileSass'], function() {
+  return gulp.src(["css/application.css", "js/app.min.js", 'index.html',
+                   "img/**", "fonts/**"], { base: './'})
+            .pipe(gulp.dest('dist'));
 });
 
-gulp.task("default", ["clean"], function() {
-	gulp.start('build');
-});
+gulp.task("default", ["build"]);
