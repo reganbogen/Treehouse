@@ -53,5 +53,5 @@ gulp.task("build", ['minifyScripts', 'compileSass'], function() {
 gulp.task('serve', ['watchFiles']);
 
 gulp.task("default", ["clean"], function() {
-	gulp.start('build');
+  gulp.start('build');
 });
