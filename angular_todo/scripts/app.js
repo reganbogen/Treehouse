@@ -1,8 +1,9 @@
 angular.module("todoListApp", [])
 
 .controller('mainCtrl', function($scope, dataService) {
-	$scope.learningNgChange = function() {
-		console.log("An input changed.");
+	$scope.addTodo = function() {
+		var todo = {name: "This is a new todo."};
+		$scope.todos.push(todo);
 	};
 
 	$scope.helloWorld = dataService.helloWorld;
@@ -16,7 +17,7 @@ angular.module("todoListApp", [])
 		dataService.deleteTodo(todo);$scope.todos.splice($index, 1);
 	};
 
-	$scop.saveTodo = function(todo) {
+	$scope.saveTodo = function(todo) {
 		dataService.saveTodo(todo);
 	}
 })
