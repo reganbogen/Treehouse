@@ -1,8 +1,8 @@
 angular.module("todoListApp", [])
 
 .controller('mainCtrl', function($scope) {
-	$scope.helloWorld = function() {
-		console.log("hello there: This is the helloworld controller function, in the mainCtrl!");
+	$scope.learningNgChange = function() {
+		console.log("An input changed.");
 	};
 
 		$scope.todos = [
@@ -13,5 +13,5 @@ angular.module("todoListApp", [])
 			{"name": "run"},
 			{"name": "swim"}
 		]
-		
+
 });
